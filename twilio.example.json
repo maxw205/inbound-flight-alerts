@@ -1,0 +1,6 @@
+{
+  "accountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "authToken": "your_auth_token",
+  "fromNumber": "+18175550100",
+  "toNumber": "+18175550199"
+}

@@ -1,3 +1,4 @@
 credentials.json
 __pycache__/
 aeroAPIkey.txt
+twilio.json
