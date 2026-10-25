@@ -13,9 +13,7 @@ TWILIO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credenti
 
 ALERT_RADIUS_MILES = 75
 POLL_SECONDS = 60
-REALERT_HOURS = 6  # don't text about the same flight again within this window
-
-TWILIO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "twilio.json")
+REALERT_HOURS = 3  # don't text about the same flight again within this window
 
 # OpenSky reports ICAO callsigns (FDX1123), FlightAware idents here are IATA (FX1123)
 IATA_TO_ICAO_AIRLINE = {

@@ -1,0 +1,3 @@
+requests
+# zoneinfo needs timezone data, which slim Docker images lack
+tzdata

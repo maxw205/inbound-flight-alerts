@@ -1,0 +1,8 @@
+.git
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+.venv/
+# Credentials are mounted at runtime, never baked into the image
+credentials/
+*.json
