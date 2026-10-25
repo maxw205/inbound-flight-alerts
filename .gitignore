@@ -4,3 +4,4 @@ aeroAPIkey.txt
 twilio.json
 credentials/
 .pytest_cache/
+report.xml
