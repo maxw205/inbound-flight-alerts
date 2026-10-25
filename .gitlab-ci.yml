@@ -1,0 +1,29 @@
+# Runs on every push and merge request. Check results under Build > Pipelines.
+stages:
+  - test
+  - build
+
+# Run the pytest suite directly in Python. The JUnit report shows each
+# test's result in the pipeline's "Tests" tab and on merge requests.
+test:
+  stage: test
+  image: python:3.12-slim
+  script:
+    - pip install --no-cache-dir -r requirements-dev.txt
+    - python -m pytest -v --junitxml=report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+
+# Build the runtime image to make sure the Dockerfile still works.
+# Docker-in-Docker gives the job its own Docker daemon to build with.
+docker-build:
+  stage: build
+  image: docker:27.3.1
+  services:
+    - docker:27.3.1-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  script:
+    - docker build --target runtime -t inbound-flight-alerts:$CI_COMMIT_SHORT_SHA .
