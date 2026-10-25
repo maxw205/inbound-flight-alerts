@@ -72,7 +72,7 @@ def check_once(tracked, alerted):
 
 def main():
     if "--test" in sys.argv:
-        send_text("Test from Plane Texting Project: Twilio is set up.")
+        send_text("Test from Inbound Flight Alerts: Twilio is set up.")
         print("Test text sent.")
         return
 
