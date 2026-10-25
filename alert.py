@@ -8,7 +8,8 @@ import time
 import requests
 
 from flightaware import TRACKED_FLIGHTS
-from main import get_planes_near_alliance
+from extra.alliance_tracker import get_planes_near_alliance   # was: from main import ...
+TWILIO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "credentials", "twilio.json")
 
 ALERT_RADIUS_MILES = 75
 POLL_SECONDS = 60
